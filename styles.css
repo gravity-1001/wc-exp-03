@@ -1,0 +1,259 @@
+/* Custom CSS Properties (Variables) */
+:root {
+    /* New Attractive Palette: Warm, cozy, and professional */
+    --primary-color: #5D4037; /* Deep Espresso Brown (Primary Brand Color) */
+    --secondary-color: #A1887F; /* Soft Taupe (Subtle background/accents) */
+    --accent-color: #FFB300; /* Vibrant Gold/Amber (CTA/Highlight Color) */
+    --dark-text: #212121; /* Nearly Black for crisp text */
+    --light-background: #F5F5F5; /* Off-White/Light Gray Background */
+    --font-heading: 'Merriweather', serif; /* A classic, readable serif for headings */
+    --font-body: 'Lato', sans-serif; /* A clean, modern sans-serif for body */
+}
+
+/* Base Reset and Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-background);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+/* --- Header and Navigation (Elegant Look) --- */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.25rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for prominence */
+    position: sticky; /* Sticky header for better navigation */
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: white;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Underline effect on hover */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.cart-btn {
+    background-color: var(--accent-color);
+    color: var(--dark-text) !important;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.cart-btn:hover {
+    background-color: #ffc107;
+    transform: scale(1.05); /* Subtle growth effect */
+}
+.cart-btn::after {
+    display: none; /* Hide the underline for the cart button */
+}
+
+/* --- Main Content Layout --- */
+main {
+    padding: 1rem 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* --- Hero Section (Gradient Background) --- */
+.hero {
+    background: linear-gradient(135deg, var(--secondary-color), #D7CCC8); /* Warm gradient */
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--dark-text);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 50px; /* Pill shape */
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(255, 179, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffc107;
+    transform: translateY(-3px) scale(1.02); /* More dynamic lift */
+    box-shadow: 0 8px 20px rgba(255, 179, 0, 0.5);
+}
+
+/* --- Featured Books Section (Grid Layout and Card Design) --- */
+.featured-books {
+    margin-bottom: 4rem;
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.book-card {
+    background-color: white;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Pronounced, attractive shadow */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition curve */
+    border: 1px solid #eee;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.book-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on the image */
+}
+
+.book-card h3 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+.book-card .author {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.book-card .price {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.book-card button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card button:hover {
+    background-color: #795548;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-text);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* --- Media Queries (Responsiveness) --- */
+@media (max-width: 900px) {
+    .book-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
